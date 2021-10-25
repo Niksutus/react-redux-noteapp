@@ -2,7 +2,7 @@ import React from 'react';
 
 //components
 import AddForm from './components/AddForm';
-import Note from './components/Note'
+import Notes from './components/Notes'
 
 
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
     <div>
       <h1>Todo App</h1>
       <AddForm />
-      <Note />
+      <Notes />
     </div>
   );
 };

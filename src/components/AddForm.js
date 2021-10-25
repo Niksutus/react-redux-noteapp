@@ -11,6 +11,7 @@ const AddForm = () => {
     const content = event.target.note.value;
     event.target.note.value = "";
     dispatch(createNote(content));
+    console.log(content)
   };
 
   return (
