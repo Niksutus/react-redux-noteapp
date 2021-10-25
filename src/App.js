@@ -1,9 +1,11 @@
 import React from 'react';
+import AddForm from './components/AddForm';
 
 const App = () => {
   return (
     <div>
-      <h1>Testing</h1>
+      <h1>Todo App</h1>
+      <AddForm />
     </div>
   );
 };
