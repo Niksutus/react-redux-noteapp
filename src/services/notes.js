@@ -29,4 +29,15 @@ const deleteNoteFromServer = (id) => {
     });
 }
 
-export { getAll, addNoteToServer, deleteNoteFromServer };
+const updateNoteOnServer = (id, updatedNote) => {
+  axios
+    .put(`http://localhost:3001/notes/${id}`, updatedNote)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+export { getAll, addNoteToServer, deleteNoteFromServer, updateNoteOnServer };

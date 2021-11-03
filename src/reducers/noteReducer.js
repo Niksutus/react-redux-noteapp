@@ -8,6 +8,20 @@ const noteReducer = (state = [], action) => {
 
     case "DELETE_NOTE":
       return [...state.filter((note) => note.id !== action.data)];
+
+    case "STRIKEOUT_NOTE":
+      const id = action.data
+      const noteToChange = state.find(note => note.id === id)
+      const changedNote = {
+        ...noteToChange,
+        strikeThrough: !noteToChange.strikeThrough
+      }
+
+      console.log(changedNote)
+      
+      return state.map(note =>
+        note.id !== id ? note : changedNote)
+    
     default:
       return state;
   }
@@ -42,6 +56,15 @@ export default noteReducer;
 export const removeNote = (id) => {
   return {
     type: "DELETE_NOTE",
+    data: id,
+  };
+};
+
+// action-creator to strikeout a note
+
+export const strikeOutNote = (id) => {
+  return {
+    type: "STRIKEOUT_NOTE",
     data: id,
   };
 };
