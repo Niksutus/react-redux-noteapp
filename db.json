@@ -1,8 +1,9 @@
 {
   "notes": [
     {
-      "id": 1,
-      "note": "This is a hardcoded note added to the JSON server"
+      "id": 869183,
+      "note": "testing",
+      "strikeThrough": false
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { initializeNotes } from "./reducers/noteReducer";
-import noteService from "./services/notes" 
+import { getAll } from "./services/notes" 
 
 //components
 import AddForm from "./components/AddForm";
@@ -11,8 +11,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    noteService
-      .getAll()
+      getAll()
       .then(notes => dispatch(initializeNotes(notes)))
   }, [dispatch]);
 
